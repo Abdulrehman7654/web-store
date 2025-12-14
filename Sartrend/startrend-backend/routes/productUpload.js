@@ -52,37 +52,37 @@ router.post("/productUpload", async (req, res) => {
 });
 
 // GET: All Products
-router.get("/products", async (req, res) => {
-    try {
-        const products = await Product.find({});
+// router.get("/products", async (req, res) => {
+//     try {
+//         const products = await Product.find({});
         
-        // Normalize backend → frontend keys
-        const normalized = products.map(p => ({
-            id: p._id,
-            _id: p._id,
-            name: p.name,
-            category: p.category,
-            rate: p.rate,
-            stock: p.stock,
-            description: p.description,
-            imageUrl: p.imageurl,
-            activecomponents: p.activecomponents,
-            ingredients: p.ingredients
-        }));
+//         // Normalize backend → frontend keys
+//         const normalized = products.map(p => ({
+//             id: p._id,
+//             _id: p._id,
+//             name: p.name,
+//             category: p.category,
+//             rate: p.rate,
+//             stock: p.stock,
+//             description: p.description,
+//             imageUrl: p.imageurl,
+//             activecomponents: p.activecomponents,
+//             ingredients: p.ingredients
+//         }));
 
-        res.json({
-            success: true,
-            products: normalized
-        });
-    } catch (err) {
-        console.error("Error fetching products:", err);
-        res.status(500).json({
-            success: false,
-            message: "Internal server error",
-            error: err.message
-        });
-    }
-});
+//         res.json({
+//             success: true,
+//             products: normalized
+//         });
+//     } catch (err) {
+//         console.error("Error fetching products:", err);
+//         res.status(500).json({
+//             success: false,
+//             message: "Internal server error",
+//             error: err.message
+//         });
+//     }
+// });
 
 // GET: Single Product by ID
 router.get("/product/:id", async (req, res) => {

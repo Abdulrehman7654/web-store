@@ -223,7 +223,7 @@ export default function Navbar() {
               </Link>
 
               {/* DEALS DROPDOWN */}
-              <div className="relative">
+              {/* <div className="relative">
                 <Link
                   to="/deals" 
                   onClick={() => setDealsOpen((v) => !v)} 
@@ -257,7 +257,7 @@ export default function Navbar() {
                     </React.Fragment>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* STATIC NAV ITEMS */}
               {staticNavItems.map((item) => (
